@@ -1013,7 +1013,6 @@ vector< vector<double> > Astro::DiceGalacticPositions(int n) {
  */
 unsigned int Astro::GetRandomArm(double r) {
   vector<int> vint = ArmsVector;
-  for (unsigned int i=0;i<ArmsVector.size();i++) cout<< ArmsVector[i] << endl;
   if(SPIRALARMMODEL==1) {
 
     //QUIETMODE = 1;
@@ -1026,7 +1025,6 @@ unsigned int Astro::GetRandomArm(double r) {
   double v = fUtils->Random();
   unsigned int i = 1;
   for(;i<=size;i++) {
-    //cout << "-- " << i << std::endl;
     double x = (double)i/size;
     if(x>v) break;
   }
@@ -1892,7 +1890,6 @@ void Astro::CalculateForwardShockInRGWind(vector<double> pars, double tmin,
   double RGWSedovRadiusFromProfile = fUtils->EvalSpline(pars[8]*mSol,m,a,
                                                         __func__,__LINE__);
   RGWSedovRadiusFromProfile /= pc_to_cm;
-  cout << RGWSedovRadius << " " << RGWSedovRadiusFromProfile << endl;
   double RGVSR = 0.;
   (RGWSedovRadiusFromProfile > RGWSedovRadius) ? RGVSR = RGWSedovRadius:
     RGVSR = RGWSedovRadiusFromProfile;
