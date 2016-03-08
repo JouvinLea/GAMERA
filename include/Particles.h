@@ -307,7 +307,7 @@ class Particles {
   void CalculateElectronSpectrum() {CalculateParticleSpectrum("electrons");}
   void SetType(string type);
   double EnergyLossRate(double E);  ///< total energy loss rate of particles
-
+  double LossTimeScale(string type, double E);
   void SetAge(double age) {
     Age = age;
     SetMembers(Age);
